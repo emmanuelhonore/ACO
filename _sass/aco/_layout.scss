@@ -1,0 +1,180 @@
+/**
+ * Site header
+ */
+.site-header {
+  min-height: 90vh;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+}
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit 0;
+}
+
+.footer-heading {
+  @include relative-font-size(1.125);
+  margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.footer-col-wrapper {
+  @include relative-font-size(0.9375);
+  color: $grey-color;
+  margin-left: -$spacing-unit / 2;
+  @extend %clearfix;
+}
+
+.footer-col {
+  float: left;
+  margin-bottom: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+  width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+  width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+  width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+  .footer-col-1,
+  .footer-col-2 {
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-3 {
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+@include media-query($on-palm) {
+  .footer-col {
+    float: none;
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+
+/**
+ * Header
+ */
+
+ // demo only
+ #skyswitch {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: $brand-color;
+  text-decoration: underline;
+  z-index: 10;
+  cursor: pointer;
+ }
+.hero {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.player {
+  position: absolute;
+    z-index: 100;
+    width: 100%;
+    display: block;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+
+  &.enabled {
+    visibility: visible;
+  opacity: 1;
+  }
+
+& > div {
+  width: unquote("clamp(350px, 700px, 75%)");
+}
+}
+.player-toggle{
+  position: absolute;
+  z-index: 100;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  text-align: center;
+  color: $brand-color;
+  filter: drop-shadow( 0 1px 6px rgba(0, 0, 0, .5)) drop-shadow( 0 1px 2px rgba(0, 0, 0, .1));
+  p {
+    font-size: unquote("clamp(.8rem, 2.1vw - 0.1rem, 1.2rem)");
+  }
+  svg {
+    transition: transform .1s;
+  }
+  &:hover svg{
+    transform: scale(1.1);
+  }
+}
+
+.image {}
+.image__bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: $text-color;
+  background-image: url("/assets/imgs/aco-sky-default.jpg");
+  background-position: bottom center;
+  background-size: cover;
+}
+.image__front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("/assets/imgs/aco-title-large.png");
+  background-position: bottom center;
+  background-size: cover;
+}
+
+/**
+ * Page content
+ */
+.page-content {
+  padding: 10vh 0 10vh 0;
+  flex: 1;
+
+  background-color: $brand-color;
+}
+
+article {
+  margin-bottom: $spacing-unit * 3;
+  width: unquote("max(350px, 75%)");
+}
+
+.lang-en {
+  text-align: right;
+  float: right;
+}
