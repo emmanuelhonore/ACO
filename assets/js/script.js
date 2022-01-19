@@ -37,18 +37,6 @@ else if(currentTime >= startNight) {
   $sky.style.backgroundImage="url(/assets/imgs/aco-sky-night.jpg)";
 }
 
-
-// for example purpose only
-var skys = ["url(/assets/imgs/aco-sky-night.jpg)", "url(/assets/imgs/aco-sky-default.jpg)", "url(/assets/imgs/aco-sky-morning.jpg)", "url(/assets/imgs/aco-sky-afternoon.jpg)"];
-var index = 0;
-var $skySwitch = document.getElementById('skyswitch');
-
-$skySwitch.addEventListener('click', Event => {
-  $sky.style.backgroundImage= skys[index];
-  index++;
-  if (index >= 4) { index = 0; }
-});
-
 // toggle trailer
 var $trailer = document.getElementById('player');
 var $trailerToggle = document.getElementById('player-toggle');
